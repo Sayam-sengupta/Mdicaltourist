@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+	<meta name="author" content="themefisher.com">
+
+	<title>Swasthealify Private Limited</title>
+
+	<style>
+		body {
+			margin: 0;
+			font-family: 'Segoe UI', sans-serif;
+			background-color: #f7faf9;
+			color: #333;
+		}
+
+		.services-container {
+			padding: 4rem 2rem;
+			background-color: #f0f8f0;
+			text-align: center;
+			border-radius: 12px;
+			box-shadow: 0 4px 8px rgba(46, 96, 75, 0.1);
+			margin-top: 2rem;
+		}
+
+		.services-container h2 {
+			font-size: 2rem;
+			color: #2e604b;
+			font-weight: bold;
+		}
+
+		.services-container p {
+			font-size: 1rem;
+			color: #6b8f71;
+			margin-top: 1rem;
+		}
+
+		.services-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+
+		.service-card {
+			background-color: #ffffff;
+			padding: 1.5rem;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(46, 96, 75, 0.1);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.service-card:hover {
+			transform: scale(1.05);
+			box-shadow: 0 6px 12px rgba(46, 96, 75, 0.2);
+		}
+
+		.service-icon {
+			font-size: 3rem;
+			color: #4caf50;
+		}
+
+		.service-title {
+			font-size: 1.25rem;
+			color: #2e604b;
+			font-weight: bold;
+			margin-top: 1rem;
+		}
+
+		.service-description {
+			font-size: 0.95rem;
+			color: #6b8f71;
+			margin-top: 1rem;
+		}
+
+		@media (max-width: 768px) {
+			.services-container {
+				padding: 2rem 1rem;
+			}
+
+			.services-container h2 {
+				font-size: 1.5rem;
+			}
+
+			.service-card {
+				padding: 1rem;
+			}
+		}
+
+		.ayurveda-offerings {
+			padding: 80px 0;
+			background-color: #f8fbf8;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.ayurveda-offerings::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23e8f5e9" opacity="0.3"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10"></path></svg>');
+			background-size: 200px;
+			z-index: 0;
+		}
+
+		.section-header {
+			text-align: center;
+			margin-bottom: 60px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.section-header .subtitle {
+			display: inline-block;
+			color: #4caf50;
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		.section-header h2 {
+			font-size: 36px;
+			color: #2e7d32;
+			margin-bottom: 15px;
+			position: relative;
+			display: inline-block;
+		}
+
+		.section-header h2::after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80px;
+			height: 3px;
+			background-color: #ffab00;
+		}
+
+		.section-description {
+			max-width: 700px;
+			margin: 0 auto;
+			color: #555;
+			font-size: 18px;
+		}
+
+		.offerings-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 30px;
+			margin-bottom: 60px;
+			position: relative;
+			z-index: 1;
+		}
+
+		.offering-card {
+			background: white;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+			transition: all 0.3s ease;
+			position: relative;
+			padding: 30px;
+			border-top: 4px solid #4caf50;
+		}
+
+		.offering-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 15px 40px rgba(46, 125, 50, 0.15);
+		}
+
+		.offering-card.featured {
+			border-top-color: #ffab00;
+		}
+
+		.featured-badge {
+			position: absolute;
+			top: 20px;
+			right: -10px;
+			background: #ffab00;
+			color: white;
+			padding: 5px 15px;
+			font-weight: 600;
+			font-size: 14px;
+			border-radius: 4px;
+			box-shadow: 0 4px 10px rgba(255, 171, 0, 0.3);
+		}
+
+		.card-icon {
+			width: 80px;
+			height: 80px;
+			background-color: #e8f5e9;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 25px;
+		}
+
+		.card-icon img {
+			width: 40px;
+			height: 40px;
+		}
+
+		.card-content h3 {
+			color: #2e7d32;
+			font-size: 22px;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+
+		.card-content p {
+			color: #666;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.benefits-list {
+			list-style: none;
+			margin-bottom: 25px;
+		}
+
+		.benefits-list li {
+			margin-bottom: 10px;
+			color: #555;
+			position: relative;
+			padding-left: 30px;
+		}
+
+		.benefits-list li i {
+			color: #4caf50;
+			position: absolute;
+			left: 0;
+			top: 3px;
+		}
+
+		.card-footer {
+			text-align: center;
+		}
+
+		.btn-ayurveda {
+			display: inline-block;
+			padding: 12px 30px;
+			background-color: #2e7d32;
+			color: white;
+			border-radius: 50px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 14px;
+			transition: all 0.3s ease;
+		}
+
+		.btn-ayurveda:hover {
+			background-color: #1b5e20;
+			color: white;
+			transform: translateY(-3px);
+			box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
+		}
+
+		.leaf-decoration {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%234caf50" opacity="0.1"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10"></path></svg>');
+			background-size: contain;
+			background-repeat: no-repeat;
+			bottom: 20px;
+			right: 20px;
+		}
+
+		.ayurveda-cta {
+			background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+			border-radius: 12px;
+			padding: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 30px;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+		}
+
+		.ayurveda-cta::before {
+			content: "";
+			position: absolute;
+			top: -50px;
+			right: -50px;
+			width: 200px;
+			height: 200px;
+			background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="white" opacity="0.1"><path d="M30,10 Q50,5 70,10 T90,30 Q95,50 90,70 T70,90 Q50,95 30,90 T10,70 Q5,50 10,30 T30,10"></path></svg>');
+			background-size: contain;
+			z-index: -1;
+		}
+
+		.cta-content h3 {
+			color: white;
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.cta-content p {
+			color: rgba(255, 255, 255, 0.9);
+			margin-bottom: 0;
+			max-width: 600px;
+		}
+
+		.cta-btn {
+			background-color: white;
+			color: #2e7d32 !important;
+			min-width: 200px;
+			text-align: center;
+		}
+
+		.cta-btn:hover {
+			background-color: #ffab00;
+			color: white !important;
+		}
+
+		/* Responsive Styles */
+		@media (max-width: 992px) {
+			.section-header h2 {
+				font-size: 32px;
+			}
+
+			.ayurveda-cta {
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.ayurveda-offerings {
+				padding: 60px 0;
+			}
+
+			.section-header h2 {
+				font-size: 28px;
+			}
+
+			.offerings-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.offering-card.featured {
+				transform: scale(1);
+			}
+		}
+
+		@media (max-width: 576px) {
+			.section-header h2 {
+				font-size: 24px;
+			}
+
+			.section-description {
+				font-size: 16px;
+			}
+
+			.ayurveda-cta {
+				padding: 30px 20px;
+			}
+
+			.cta-content h3 {
+				font-size: 20px;
+			}
+		}
+	</style>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<!-- Icon Font Css -->
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<!-- Slick Slider  CSS -->
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="top">
+
+	<header>
+		<div class="header-top-bar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<ul class="top-bar-info list-inline-item pl-0 mb-0">
+							<li class="list-inline-item"><a href="mailto:support@gmail.com"><i
+										class="icofont-support-faq mr-2"></i>care@swasthealify.com.</a></li>
+							<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A, New
+								York, USA </li>
+						</ul>
+					</div>
+					<div class="col-lg-6">
+						<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+							<a href="tel:+23-345-67890">
+								<span>Call Now : </span>
+								<span class="h4">823-4565-13456</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navigation" id="navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid">
+				</a>
+
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+					aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icofont-navigation-menu"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarmain">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+						<li class="nav-item"><a class="nav-link" href="department.html">Medical Tourism</a></li>
+						<li class="nav-item"><a class="nav-link" href="doctor.html">Products</a></li>
+						<li class="nav-item"><a class="nav-link" href="index2.html">Yoga Sessions</a></li>
+
+						<!-- <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown02">
+								<li><a class="dropdown-item" href="department.html">Departments</a></li>
+								<li><a class="dropdown-item" href="department-single.html">Department Single</a></li>
+							</ul>
+						</li> -->
+
+						<!-- <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown03">
+								<li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
+								<li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
+								<li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
+							</ul>
+						</li> -->
+
+						<!-- <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown05">
+								<li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
+
+								<li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+							</ul>
+						</li> -->
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+
+	<section class="page-title bg-1">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block text-center">
+						<span class="text-white">Our services</span>
+						<h1 class="text-capitalize mb-5 text-lg">What We Do</h1>
+
+						<!-- <ul class="list-inline breadcumb-nav">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">Our services</a></li>
+          </ul> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section service-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5">
+						<img src="images/service/service-1.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Post-Treatment Care</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5">
+						<img src="images/about/Green-Wellness-in-india.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2  title-color">Ayurveda Therapy</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5">
+						<img src="images/about/istockphoto-539294249-612x612.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Live Yoga Sessions</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5 mb-lg-0">
+						<img src="images/about/Employee-Wellbeing-Top-7-Workplace-Factors-BB-24.jpg" alt=""
+							class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Medical Counselling</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5 mb-lg-0">
+						<img src="images/service/service-6.jpg" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Examination & Diagnosis</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-sm-6">
+					<div class="service-block mb-5 mb-lg-0">
+						<img src="images/bg/1140.png" alt="" class="img-fluid">
+						<div class="content">
+							<h4 class="mt-4 mb-2 title-color">Durable Medical Equipmen</h4>
+							<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="services-container">
+		<h2>Our Services: Medical Visa Assistance & Accommodation</h2>
+		<p>We help you with the necessary arrangements for medical visas and accommodation, ensuring you have a seamless
+			experience during your medical travel.</p>
+		<div class="services-grid">
+			<div class="service-card">
+				<div class="service-icon">💼</div>
+				<div class="service-title">Medical Visa Assistance</div>
+				<div class="service-description">
+					We provide expert guidance through the entire medical visa process, ensuring all documentation is in
+					order.
+				</div>
+			</div>
+
+			<div class="service-card">
+				<div class="service-icon">🏨</div>
+				<div class="service-title">Accommodation Arrangements</div>
+				<div class="service-description">
+					We offer assistance in finding safe and comfortable accommodations close to medical facilities.
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="ayurveda-offerings">
+		<div class="container">
+			<!-- Section Header -->
+			<div class="section-header">
+				<span class="subtitle">Natural Healing</span>
+				<h2>Our Ayurveda Offerings</h2>
+				<p class="section-description">Discover authentic Ayurvedic treatments rooted in 5,000 years of wisdom
+				</p>
+			</div>
+
+			<!-- Offerings Grid -->
+			<div class="offerings-grid">
+				<!-- Offering Card 1 -->
+				<div class="offering-card">
+					<div class="card-icon">
+						<img src="https://www.svgrepo.com/show/530659/leaf.svg" alt="Herbal Therapy">
+					</div>
+					<div class="card-content">
+						<h3>Herbal Therapies</h3>
+						<p>Customized herbal formulations tailored to your dosha for complete wellness.</p>
+						<ul class="benefits-list">
+							<li><i class="fas fa-check-circle"></i> 100% Natural Ingredients</li>
+							<li><i class="fas fa-check-circle"></i> Personalized Formulas</li>
+							<li><i class="fas fa-check-circle"></i> Traditional Preparation</li>
+						</ul>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn-ayurveda">Learn More</a>
+					</div>
+					<div class="leaf-decoration"></div>
+				</div>
+
+				<!-- Offering Card 2 -->
+				<div class="offering-card featured">
+					<div class="card-icon">
+						<img src="https://www.svgrepo.com/show/530661/massage.svg" alt="Panchakarma">
+					</div>
+					<div class="card-content">
+						<h3>Panchakarma Detox</h3>
+						<p>Deep cleansing therapy to eliminate toxins and restore balance.</p>
+						<ul class="benefits-list">
+							<li><i class="fas fa-check-circle"></i> 5-Step Purification</li>
+							<li><i class="fas fa-check-circle"></i> Rejuvenation Therapy</li>
+							<li><i class="fas fa-check-circle"></i> Stress Relief</li>
+						</ul>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn-ayurveda">Book Now</a>
+					</div>
+					<div class="featured-badge">Most Popular</div>
+					<div class="leaf-decoration"></div>
+				</div>
+
+				<!-- Offering Card 3 -->
+				<div class="offering-card">
+					<div class="card-icon">
+						<img src="https://www.svgrepo.com/show/530660/yoga.svg" alt="Yoga Therapy">
+					</div>
+					<div class="card-content">
+						<h3>Yoga Therapy</h3>
+						<p>Personalized yoga sessions aligned with Ayurvedic principles.</p>
+						<ul class="benefits-list">
+							<li><i class="fas fa-check-circle"></i> Dosha-Specific Asanas</li>
+							<li><i class="fas fa-check-circle"></i> Pranayama Techniques</li>
+							<li><i class="fas fa-check-circle"></i> Meditation Guidance</li>
+						</ul>
+					</div>
+					<div class="card-footer">
+						<a href="#" class="btn-ayurveda">View Schedule</a>
+					</div>
+					<div class="leaf-decoration"></div>
+				</div>
+			</div>
+
+			<!-- Additional CTA -->
+			<div class="ayurveda-cta">
+				<div class="cta-content">
+					<h3>Ready for Your Ayurvedic Journey?</h3>
+					<p>Book a free consultation with our Ayurvedic doctor to discover your personalized wellness plan.
+					</p>
+				</div>
+				<a href="#" class="btn-ayurveda cta-btn">Schedule Consultation</a>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- footer Start -->
+	<footer class="footer section gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 mr-auto col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<div class="logo mb-4">
+							<img src="images/logo.png" alt="" class="img-fluid">
+						</div>
+						<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
+							veritatis eveniet distinctio possimus.</p>
+
+						<ul class="list-inline footer-socials mt-4">
+							<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
+										class="icofont-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
+										class="icofont-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
+										class="icofont-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- <div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Department</h4>
+						<div class="divider mb-4"></div>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#">Surgery </a></li>
+							<li><a href="#">Wome's Health</a></li>
+							<li><a href="#">Radiology</a></li>
+							<li><a href="#">Cardioc</a></li>
+							<li><a href="#">Medicine</a></li>
+						</ul>
+					</div>
+				</div> -->
+
+				<div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Support</h4>
+						<div class="divider mb-4"></div>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#">Terms & Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Company Support </a></li>
+							<li><a href="#">FAQuestions</a></li>
+							<li><a href="#">Company Licence</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="widget widget-contact mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Get in Touch</h4>
+						<div class="divider mb-4"></div>
+
+						<div class="footer-contact-block mb-4">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-email mr-3"></i>
+								<span class="h6 mb-0">Support Available for 24/7</span>
+							</div>
+							<h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
+						</div>
+
+						<div class="footer-contact-block">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-support mr-3"></i>
+								<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+							</div>
+							<h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-btm py-4 mt-5">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-6">
+						<div class="copyright">
+							&copy; Copyright Reserved to <span class="text-color">SwastHealify</span> by <a
+								href="https://kodingcircle.in/" target="_blank">KodingCircle</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+							<form action="#" class="subscribe">
+								<input type="text" class="form-control" placeholder="Your Email address">
+								<a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<a class="backtop js-scroll-trigger" href="#top">
+							<i class="icofont-long-arrow-up"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- 
+    Essential Scripts
+    =====================================-->
+
+
+	<!-- Main jQuery -->
+	<script src="plugins/jquery/jquery.js"></script>
+	<!-- Bootstrap 4.3.2 -->
+	<script src="plugins/bootstrap/js/popper.js"></script>
+	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="plugins/counterup/jquery.easing.js"></script>
+	<!-- Slick Slider -->
+	<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+	<!-- Counterup -->
+	<script src="plugins/counterup/jquery.waypoints.min.js"></script>
+
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+	<script src="plugins/counterup/jquery.counterup.min.js"></script>
+	<!-- Google Map -->
+	<script src="plugins/google-map/map.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
+	<script src="js/script.js"></script>
+	<script src="js/contact.js"></script>
+
+</body>
+
+</html>
